@@ -9,11 +9,11 @@ const Parallax = () => {
             <div  className='text'>welcome to my experience...!
             <p className='text-p'>Parallax Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p></div> 
         </div>
-        <div className='section2'>
-          <div className='eyes'>
-          <div className='eyeL'></div><div className='eyeR '></div>
-          </div>
+        <div className='section3'>
+        <div className='eyes01'>
+        <div className='eyeL01'></div><div className='eyeR01'></div>
         </div>
+    </div>
     </div>
   )
 }
