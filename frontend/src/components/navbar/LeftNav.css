@@ -11,6 +11,7 @@
     
     height: 20vw;
     min-height: 200px;
+    top: -500px;
     z-index: 1;
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
     backdrop-filter: blur(10px);
@@ -19,6 +20,31 @@
     border: 1px solid rgba(255,255,255,0.18);
     box-shadow: 0 8px 32px rgba(0,0,0,0.37);
 }
+.glass-left {
+	-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+}
+    @keyframes slide-bottom {
+        0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(200px);
+              transform: translateY(500px);
+    }
+}
+  
 @media screen and (max-width: 1600px) {
     .glass-left{
 
