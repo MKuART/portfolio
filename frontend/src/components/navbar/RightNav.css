@@ -1,0 +1,44 @@
+.glass-right{
+    --cyan-text:  rgb(155, 219, 221, 1);
+    --cyan-border:  rgb(155, 219, 221, 0.18);
+    position: fixed;
+/*     background-color: aqua; */
+    right: 0px;
+    margin: 30px;
+    width: 550px;
+
+    height: 20vw;
+    min-height: 200px;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--cyan-border);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+}
+@media screen and (max-width: 1600px) {
+    .glass-right{
+        height: 10vw;
+        min-height: 180px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .glass-right{
+        width: 225px;
+        margin: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .glass-right{
+        margin: 10px;
+    }
+}
+@media screen and (max-width: 530px) {
+    .glass-right{
+        margin: 5px;
+    }
+}
+@media screen and (max-width: 390px) {
+    
+}

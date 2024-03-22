@@ -1,14 +1,16 @@
 
 import './App.css'
+import React, { useEffect } from 'react';
 import Parallax from './components/Parallax'
-import Navbar from './components/navbar'
+import LeftNav from './components/navbar/LeftNav'
+import RightNav from './components/navbar/RightNav'
 
 function App() {
 
 
   return (
     <>
-  
+    <LeftNav/><RightNav/>
     <Parallax/>
 
     </>
