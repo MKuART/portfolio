@@ -1,10 +1,9 @@
 .body{
-    --text-whihte: rgba(255,255,255,1);
+    --text-white: rgba(255,255,255,1);
     --black-bg: rgba(0,0,0,1);
     --cyan-text:  rgb(155, 219, 221, 1);
     width: 100vw;
     height: 100vh;
-    margin: 0;
     background: var(--black-bg);
     perspective: 1px;
     transform-style: preserve-3d;
@@ -17,7 +16,7 @@
     overflow-y: scroll;
 */
 
-.section1, .section2 {
+.section1, .section3 {
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -53,6 +52,7 @@
 }
 
 .text-p{
+    color: var(--cyan-text);
     position: relative;
     z-index: -1;
     font-size: 2.5rem;
@@ -95,29 +95,30 @@
 
 
 
-.section2 {
+.section3 {
     background: var(--black-bg);
     
 }
-.eyeL, .eyeR {
-    background-color: var(--text-whihte);
+.eyeL01, .eyeR01 {
+    background-color: var(--text-white);
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    border: 20px solid rgba(255, 255, 255, 0.5);
+    border: 5px solid rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
     cursor: pointer;
+
 }
-.eyes{
+.eyes01{
     padding-left: 15%;
-    margin-top: 200px;
+    margin-top: 300px;
     display: flex;
     font-size: 3rem;
     position: fixed;
 }
-.eyeL::after, .eyeR::after {
+.eyeL01::after, .eyeR01::after {
     content: '';
-    background-color: black;
+    background-color: var(--black-bg);
     border-radius: 50%;
     height: 50px;
     width: 50px;

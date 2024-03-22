@@ -1,15 +1,14 @@
 :root {
+  --cyan-text:  rgb(155, 219, 221, 1);
+  --cyan-border:  rgb(155, 219, 221, 0.18);
+  --black-bg: rgba(0,0,0,1);
+  margin: 0 auto;
+  color: aliceblue;
+  background-color: var(--black-bg);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgb(155, 219, 221);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 

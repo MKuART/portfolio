@@ -1,6 +1,9 @@
 .glass-right{
     --cyan-text:  rgb(155, 219, 221, 1);
     --cyan-border:  rgb(155, 219, 221, 0.18);
+    --black-bg: rgba(0,0,0,1);
+    color: var(--cyan-text);
+
     position: fixed;
 /*     background-color: aqua; */
     right: 0px;

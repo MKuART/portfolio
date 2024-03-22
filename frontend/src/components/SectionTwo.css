@@ -1,0 +1,16 @@
+.section2 {
+    --black-bg: rgba(0,0,0,1);
+    --text-whihte: rgba(255,255,255,1);
+    --cyan-text:  rgb(155, 219, 221, 1);
+    background: var(--black-bg);
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--cyan-text);
+}
