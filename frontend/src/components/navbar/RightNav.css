@@ -10,8 +10,9 @@
     margin: 30px;
     width: 550px;
 
-    height: 20vw;
-    min-height: 200px;
+    height: 10vw;
+    min-height: 100px;
+    right: -900px;
     z-index: 2;
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
     backdrop-filter: blur(10px);
@@ -19,6 +20,21 @@
     border-radius: 20px;
     border: 1px solid var(--cyan-border);
     box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+}
+.glass-right {
+	-webkit-animation: slide-glass 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-glass 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+    @keyframes slide-glass {
+        0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-200px);
+              transform: translateX(-900px);
+    }
 }
 @media screen and (max-width: 1600px) {
     .glass-right{

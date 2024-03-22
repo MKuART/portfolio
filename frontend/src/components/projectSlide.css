@@ -1,0 +1,38 @@
+.project-glass{
+    --cyan-text:  rgb(155, 219, 221, 1);
+    --cyan-border:  rgb(155, 219, 221, 0.18);
+    --black-bg: rgba(0,0,0,1);
+    color: var(--cyan-text);
+
+    position: fixed;
+/*     background-color: aqua; */
+    right: 0px;
+    width: 50px;
+    top: 400px;
+
+    height: 400px;
+    
+    right: -900px;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--cyan-border);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+}
+.project-glass {
+	-webkit-animation: slide-project-glass 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-project-glass 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+    @keyframes slide-project-glass {
+        0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-200px);
+              transform: translateX(-900px);
+    }
+}

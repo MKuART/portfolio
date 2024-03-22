@@ -10,10 +10,20 @@ const Parallax = () => {
             <p className='text-p'>Parallax Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p></div> 
         </div>
         <div className='section3'>
-        <div className='eyes01'>
-        <div className='eyeL01'></div><div className='eyeR01'></div>
+            <div className='eyes01'>
+              <div className='eyeL01'></div><div className='eyeR01'></div>
+            </div>
         </div>
-    </div>
+{/*         <div className='arrow-container'>
+            <div className="arrow">
+              <div className="shape1"></div>
+              <div className="shape2"></div>
+            </div>
+            <div className="arrow">
+              <div className="shape1"></div>
+              <div className="shape2"></div>
+            </div>
+        </div> */}
     </div>
   )
 }
