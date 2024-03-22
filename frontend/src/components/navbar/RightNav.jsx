@@ -10,9 +10,9 @@ function RightNav() {
     
           if (rightNav) {
            
-            const scale = window.scrollY > 0 ? 0 : 0.5;       
+            const scale = window.scrollY > 0 ? 0.5 : 1;       
             rightNav.style.transition = 'transform 0.5s';
-            rightNav.style.transform = `scale(${scale})`;
+            rightNav.style.transform = `scaleY(${scale})`;
           }
         };
         window.addEventListener('scroll', handleScroll);
