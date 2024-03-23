@@ -7,6 +7,7 @@ import RightNav from './components/navbar/RightNav'
 import SectionTwo from './components/sectionTwo';
 import Arrows from './components/Arrows';
 import ProjectSlide from './components/projectSlide';
+import Login from './components/login/Login';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <>
     <LeftNav/><RightNav/>
     <ProjectSlide/>
+    <Login/>
     <Parallax/>
     <Arrows/>
     <SectionTwo/>

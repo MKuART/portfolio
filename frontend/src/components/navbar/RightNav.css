@@ -1,63 +1,77 @@
-.glass-right{
-    --cyan-text:  rgb(155, 219, 221, 1);
-    --cyan-border:  rgb(155, 219, 221, 0.18);
-    --black-bg: rgba(0,0,0,1);
+.glass-right {
+    --cyan-text: rgb(155, 219, 221, 1);
+    --cyan-border: rgb(155, 219, 221, 0.18);
+    --black-bg: rgba(0, 0, 0, 1);
     color: var(--cyan-text);
 
     position: fixed;
-/*     background-color: aqua; */
     right: 0px;
     margin: 30px;
     width: 550px;
-
     height: 10vw;
     min-height: 100px;
     right: -900px;
     z-index: 2;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid var(--cyan-border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.37);
-}
-.glass-right {
-	-webkit-animation: slide-glass 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-glass 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-    @keyframes slide-glass {
-        0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+.glass-right:hover {
+    background: linear-gradient(135deg, rgba(155, 219, 221, 0.3), rgba(255, 255, 255, 0));
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.5) rotate(0deg); /* Skalierung und keine Rotation */
+}
+
+.glass-right {
+    -webkit-animation: slide-glass 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-glass 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-glass {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(-200px);
-              transform: translateX(-900px);
+        -webkit-transform: translateX(-200px);
+        transform: translateX(-900px);
     }
 }
+
 @media screen and (max-width: 1600px) {
-    .glass-right{
+    .glass-right {
         height: 10vw;
         min-height: 180px;
     }
 }
+
 @media screen and (max-width: 1000px) {
-    .glass-right{
+    .glass-right {
         width: 225px;
-        margin: 20px;
+        margin: 15px;
     }
 }
+
 @media screen and (max-width: 768px) {
-    .glass-right{
-        margin: 10px;
-    }
-}
-@media screen and (max-width: 530px) {
-    .glass-right{
+    .glass-right {
         margin: 5px;
     }
 }
+
+@media screen and (max-width: 530px) {
+    .glass-right {
+        margin: 0px;
+    }
+}
+
 @media screen and (max-width: 390px) {
-    
+    .glass-right {
+        margin: -5px;
+    }
 }
