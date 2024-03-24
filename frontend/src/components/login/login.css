@@ -2,6 +2,7 @@
     --cyan-text:  rgb(155, 219, 221, 1);
     --cyan-border:  rgb(155, 219, 221, 0.18);
     --black-bg: rgba(0,0,0,1);
+    --cyan-hover: linear-gradient(135deg, rgba(155, 219, 221,0.3), rgba(255,255,255,0));
     color: var(--cyan-text);
     position: absolute;
     /* background-color: aqua; */
@@ -9,8 +10,8 @@
 /*     min-width: 200px;
     max-width: 300px;
     height: 5vw; */
-    top: 500px;
-    left: 200px;
+    top: 430px;
+    left: -900px;
     z-index: 1;
 
     cursor: pointer;
@@ -18,9 +19,24 @@
 }
 
 .login-glass:hover {
-    background: linear-gradient(135deg, rgba(155, 219, 221,0.3), rgba(255,255,255,0));
+    background: var(--cyan-hover);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     transform: translateZ(50px);
+}
+.login-glass {
+    -webkit-animation: slide-glass-login 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-glass-login 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-glass-login {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-200px);
+        transform: translateX(500px);
+    }
 }
 
 body {
@@ -29,24 +45,23 @@ body {
 }
 
 .container {
-    position: absolute;
-    left: 500px;
-    top: -200px;
+    position: absolute; 
     padding: 3em 2em;
     height: 230px;
-    position: absolute;
-    transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
-
+    transition: transform 2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
+.container.move-right {
+    transform: translateX(900px);
+  }
 .container:hover {
     
 }
 form {
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));;
     padding: 2em;
-    height: 220px;
+    height: 260px;
 
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.18);
@@ -109,12 +124,12 @@ input[type="password"]:active {
 
 input[type="button"] {
     width: 150px;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 input[type="button"]:hover {
     cursor: pointer;
-    background: linear-gradient(135deg, rgba(155, 219, 221,0.3), rgba(255,255,255,0));
+    background: var(--cyan-hover);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -132,7 +147,7 @@ input[type="button"] {
     border: 1px solid rgba(255,255,255,0.18);
     box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
     position: absolute;
-    transition: all 0.2s ease;
+    transition: all 1.5s ease;
 }
 
 .drop-1 {
@@ -143,41 +158,41 @@ input[type="button"] {
     z-index: -1;
 }
 .container:hover .drop-1 {
-    top: -10px; /* Drop-1 um 10px nach oben verschieben */
-    left: -10px; /* Drop-1 um 10px nach links verschieben */
+    top: -10px; 
+    left: 30px;
 }
 
 .container:hover .drop-2 {
-    top: -10px; /* Drop-2 um 10px nach oben verschieben */
-    right: -10px; /* Drop-2 um 10px nach rechts verschieben */
+    bottom: -30px;
+    right: -10px;
 }
 
 .container:hover .drop-3 {
-    bottom: -10px; /* Drop-3 um 10px nach unten verschieben */
-    right: -10px; /* Drop-3 um 10px nach rechts verschieben */
+    bottom: -10px; 
+    right: -110px; 
 }
 
 .container:hover .drop-4 {
-    bottom: -10px; /* Drop-4 um 10px nach unten verschieben */
-    left: -10px; /* Drop-4 um 10px nach links verschieben */
+    background-color: var(--cyan-hover);
 }
 
 .container:hover .drop-5 {
-    bottom: -10px; /* Drop-5 um 10px nach unten verschieben */
-    left: calc(50% - 30px); /* Drop-5 zentriert unterhalb des Containers verschieben */
+    bottom: 170px;
+    left: -300px;
+    left: calc(50% - 30px);
 }
 .drop-2 {
     height: 80px;
     width: 80px;
-    bottom: -30px;
-    right: -10px;
+    bottom: -120px;
+    right: 250px;
 }
 
 .drop-3 {
     height: 100px;
     width: 100px;
-    bottom: 120px;
-    right: -50px;
+    bottom: 270px;
+    right: 100px;
     z-index: -1;
 }
 
@@ -185,14 +200,17 @@ input[type="button"] {
     height: 120px;
     width: 120px;
     top: -60px;
-    right: -60px;
+    right: -90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .drop-5 {
     height: 60px;
     width: 60px;
-    bottom: 170px;
-    left: 90px;
+    bottom: -20px;
+    left: 100px; 
     z-index: -1;
 }
 
@@ -209,4 +227,20 @@ button:focus {
     font-weight: 400;
     color: var(--cyan-text);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.login-button {
+    font-size: 4rem;
+    bottom: -20px;
+    left: 100px; 
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+}
+.drop-4:hover .login-button {
+    background-color: var(--white);
+}
+
+.password-toggle-btn {
+    background-color: var(--cyan-hover);
 }
