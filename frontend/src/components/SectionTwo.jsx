@@ -5,6 +5,7 @@ function SectionTwo() {
   return (
     <div className='section2'>
       <h2>Design</h2>
+      <div className='section2-container'></div>
        
     </div>
   )

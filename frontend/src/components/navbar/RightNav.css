@@ -2,6 +2,7 @@
     --cyan-text: rgb(155, 219, 221, 1);
     --cyan-border: rgb(155, 219, 221, 0.18);
     --black-bg: rgba(0, 0, 0, 1);
+    --cyan-hover: linear-gradient(135deg, rgba(155, 219, 221,0.3), rgba(255,255,255,0));
     color: var(--cyan-text);
 
     position: fixed;
@@ -25,12 +26,14 @@
 .glass-right:hover {
     background: linear-gradient(135deg, rgba(155, 219, 221, 0.3), rgba(255, 255, 255, 0));
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    transform: scale(1.5) rotate(0deg); /* Skalierung und keine Rotation */
 }
 
 .glass-right {
     -webkit-animation: slide-glass 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-glass 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.scial-media {
+    font-size: 3rem;
 }
 
 @keyframes slide-glass {

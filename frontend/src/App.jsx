@@ -20,6 +20,7 @@ function App() {
     <Parallax/>
     <Arrows/>
     <SectionTwo/>
+    <SectionTwo/>
 
     </>
   )
