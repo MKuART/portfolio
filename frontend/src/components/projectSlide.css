@@ -4,11 +4,11 @@
     --black-bg: rgba(0, 0, 0, 1);
     color: var(--cyan-text);
     position: fixed;
+    top: 400px;
     width: 400px;
-    top: 300px;
     height: 400px;
     right: -900px;
-    z-index: 2;
+    z-index: 1;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -16,7 +16,6 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
     cursor: pointer;
     transform: rotate(90deg);
-/*     transition: transform 0.3s ease; */
 }
 
 .project-glass:hover {
@@ -44,4 +43,31 @@
         -webkit-transform: translateX(-200px);
         transform: translateX(-550px);
     }
+}
+
+.font-list-container {
+    width: 400px;
+    height: 400px;
+
+    display: flex;
+}
+.font-container {
+
+}
+
+.project{
+
+    width: 45px;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: 8px;
+}
+.list-container {
+    font-size: 1.7rem;
+    width: 350px;
+}
+
+.list-container a {
+    font-size: 1.7rem;
+    color: var(--cyan-text);
 }

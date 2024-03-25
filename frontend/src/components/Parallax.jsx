@@ -7,7 +7,7 @@ const Parallax = () => {
     <div className='body'>
         <div className='section1'>
             <div  className='text'>welcome to my experience...!
-            <p className='text-p'>Parallax Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p></div> 
+            <p className='text-p'>Parallax Lorem ipsum dolor sit,<br /> amet consectetur adipisicing elit.</p></div> 
         </div>
         <div className='section3'>
             <div className='eyes01'>
@@ -29,3 +29,5 @@ const Parallax = () => {
 }
 
 export default Parallax
+
+// https://ui.aceternity.com/components/3d-card-effect
