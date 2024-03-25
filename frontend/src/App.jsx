@@ -21,7 +21,6 @@ function App() {
     <Arrows/>
     <SectionTwo/>
     <SectionTwo/>
-
     </>
   )
 }
