@@ -2,6 +2,7 @@
     --cyan-text: rgb(155, 219, 221, 1);
     --cyan-border: rgb(155, 219, 221, 0.18);
     --black-bg: rgba(0, 0, 0, 1);
+    transition: transform 0.3s ease;
     color: var(--cyan-text);
     position: fixed;
     top: 400px;
@@ -14,8 +15,6 @@
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-    cursor: pointer;
-    transform: rotate(90deg);
 }
 
 .project-glass:hover {
@@ -23,8 +22,8 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.project-glass.clicked {
-    right: -550px;
+.font-container.clicked {
+    transform: translateX(100px);
 }
 
 .project-glass {
@@ -52,7 +51,7 @@
     display: flex;
 }
 .font-container {
-
+    cursor: pointer;
 }
 
 .project{
@@ -61,6 +60,7 @@
     text-align: center;
     font-size: 1.7rem;
     margin-top: 8px;
+
 }
 .list-container {
     font-size: 1.7rem;

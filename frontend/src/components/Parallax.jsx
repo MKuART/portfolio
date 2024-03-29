@@ -1,5 +1,7 @@
 import React from 'react'
 import './parallax.css'
+import SectionTwo from './sectionTwo'
+import Arrows from './Arrows'
 
 
 const Parallax = () => {
@@ -24,6 +26,8 @@ const Parallax = () => {
               <div className="shape2"></div>
             </div>
         </div> */}
+        <Arrows/>
+        <SectionTwo/>
     </div>
   )
 }

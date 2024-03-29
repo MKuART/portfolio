@@ -1,0 +1,60 @@
+.arrow-container {
+    justify-content: space-between;
+}
+.arrow {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 200px;
+}
+.arrow .shape1, .arrow .shape2 {
+    
+    border-width: 70px;
+    border-style: solid;
+    height: 0px;
+    width: 0px;
+    border-color: #000 transparent transparent transparent;
+    bottom: 0px;
+    position: absolute;
+}
+ 
+.arrow .shape2 {
+    border-color: var(--cyan-text) transparent transparent transparent;
+}
+/* dont run like vision */
+.arrow-container{
+	-webkit-animation: scale-down-ver-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-down-ver-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-down-ver-bottom {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+    }
+    100% {
+      -webkit-transform: scaleY(0.3);
+              transform: scaleY(0.3);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+    }
+  }
+  @keyframes scale-down-ver-bottom {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+    }
+    100% {
+      -webkit-transform: scaleY(0.3);
+              transform: scaleY(0.3);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+    }
+  }
+  

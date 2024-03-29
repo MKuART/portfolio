@@ -1,6 +1,7 @@
 
 import './App.css'
-import React, { useEffect } from 'react';
+import { router } from './router/router.jsx';
+import { RouterProvider } from 'react-router-dom';
 import Parallax from './components/Parallax'
 import LeftNav from './components/navbar/LeftNav'
 import RightNav from './components/navbar/RightNav'
@@ -13,7 +14,19 @@ function App() {
 
 
   return (
-    <>
+    <div>
+      <RouterProvider router={ router } />
+    </div>  
+  
+  )
+}
+
+export default App
+
+
+/**
+ * 
+ *     <>
     <LeftNav/><RightNav/>
     <ProjectSlide/>
     <Login/>
@@ -22,7 +35,4 @@ function App() {
     <SectionTwo/>
     <SectionTwo/>
     </>
-  )
-}
-
-export default App
+ */
