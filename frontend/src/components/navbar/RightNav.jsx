@@ -17,8 +17,8 @@ function RightNav({ onNavigation }) {
 
     return (
         <div>
-        <div className='glass-right'>
-            <div className='drop-down-container' onClick={toggleDropdown}>
+        <div className='glass-right' onClick={toggleDropdown}>
+            <div className='drop-down-container' >
                 <FontAwesomeIcon className='burger-icon' icon={faBars}  />
                 {showDropdown && (
                     <div className='dropdown-menu'>
