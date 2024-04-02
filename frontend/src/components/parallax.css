@@ -153,7 +153,14 @@
 }
  
 .arrow .shape2 {
-
     bottom: 0px;
     border-color: #fff transparent transparent transparent;
+}
+
+.see-more-container p {
+    color: var(--cyan-text);
+    font-size: 5rem;
+    position: absolute;
+    right: 400px;
+    margin-top: -500px;
 }

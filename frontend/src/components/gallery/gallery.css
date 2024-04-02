@@ -26,14 +26,17 @@
     justify-content: center;
     align-items: center;
 }
+.carussel-container, .left-arrow, .right-arrow, .pics-container {
+    height: 31.5rem;
+}
 .carussel-container {
-    height: 30rem;
+
     width: 75.5rem;
     border: 1px solid red;
     display: flex;
 }
 .left-arrow, .right-arrow {
-    height: 30rem;
+
     width: 5rem;
     border: 1px solid red;
     display: flex;
@@ -41,14 +44,14 @@
     align-items: center;
 }
 .pics-container {
-    height: 30rem;
+
     width: 65.5rem;
     border: 1px solid greenyellow;
     display: flex;
     flex-wrap: wrap;
 }
 .pic-card {
-    height: 15rem;
+    height: 15.5rem;
     width: 21.64rem;
     border: 1px solid red;
 }

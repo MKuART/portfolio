@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../components/home/Home.jsx';
 import Gallery from '../components/gallery/Gallery.jsx';
 import AboutPage from '../components/about/AboutPage.jsx';
+import AProject from '../components/projects/AProject.jsx';
 
 export const router = createBrowserRouter([
     {
@@ -10,8 +11,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/gallery',
-                element: <Gallery />
-                
+                element: <Gallery />,
+
             },
             {
                 path: '/about',
