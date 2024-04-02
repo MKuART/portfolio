@@ -16,6 +16,7 @@ const Parallax = () => {
               <div className='eyeL01'></div><div className='eyeR01'></div>
             </div>
         </div>
+        <div className='see-more-container' ><p>see more...!</p></div>
 {/*         <div className='arrow-container'>
             <div className="arrow">
               <div className="shape1"></div>

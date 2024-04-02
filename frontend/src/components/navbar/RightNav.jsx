@@ -18,18 +18,29 @@ function RightNav({ onNavigation }) {
     return (
         <div>
         <div className='glass-right'>
-            <div className='drop-down-container'>
-                <FontAwesomeIcon icon={faBars} onClick={toggleDropdown} />
+            <div className='drop-down-container' onClick={toggleDropdown}>
+                <FontAwesomeIcon className='burger-icon' icon={faBars}  />
                 {showDropdown && (
                     <div className='dropdown-menu'>
-                    <div onClick={() => handleClick('parallax')}>
-                      <NavLink to='/'>Home</NavLink>
+                    <div 
+                      className='home-con all-con'
+                      onClick={() => handleClick('parallax')}>
+                      <NavLink className='navlink-text' to='/'>Home</NavLink>
                     </div>
-                    <div onClick={() => handleClick('gallery')}>
-                      <NavLink to='/gallery'>Gallery</NavLink>
+                    <div 
+                      className='gallery-con all-con'
+                      onClick={() => handleClick('gallery')}>
+                      <NavLink className='navlink-text' to='/gallery'>Gallery</NavLink>
                     </div>
-                    <div onClick={() => handleClick('about')}>
-                      <NavLink to='/about'>About</NavLink>
+                    <div 
+                      className='about-con all-con'
+                      onClick={() => handleClick('about')}>
+                      <NavLink className='navlink-text' to='/about'>About</NavLink>
+                    </div>
+                    <div 
+                      className='contact-con all-con'
+                      onClick={() => handleClick('about')}>
+                      <NavLink className='navlink-text' to='/contact'>Contact</NavLink>
                     </div>
                   </div>
                 )}
