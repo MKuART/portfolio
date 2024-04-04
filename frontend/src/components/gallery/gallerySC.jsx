@@ -90,3 +90,62 @@ function Gallery() {
 }
 
 export default Gallery
+
+[
+  {
+    "name": "MK-Ultra",
+    "description": "blender Animation",
+    "imageUrls": [
+      "src/assets/mku/itteration.png",
+      "src/assets/mku/itteration018.png"
+    ]
+  },
+  {
+    "name": "Retro Street Loop",
+    "description": "blender Animation for Music",
+    "imageUrls": [
+      "src/assets/mku/itteration.png",
+      "src/assets/mku/itteration018.png"
+    ]
+  },
+  {
+    "name": "Physiotherapie",
+    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
+    "imageUrls": [
+      "src/assets/schachKugelBackground01.png",
+      "src/assets/schachKugelBackground01.png"
+    ]
+  },
+  {
+    "name": "Physiotherapie02",
+    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
+    "imageUrls": [
+      "src/assets/schachKugelBackground01.png",
+      "src/assets/schachKugelBackground01.png"
+    ]
+  },
+  {
+    "name": "Physiotherapie03",
+    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
+    "imageUrls": [
+      "src/assets/schachKugelBackground01.png",
+      "src/assets/schachKugelBackground01.png"
+    ]
+  },
+  {
+    "name": "Physiotherapie04",
+    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
+    "imageUrls": [
+      "src/assets/schachKugelBackground01.png",
+      "src/assets/schachKugelBackground01.png"
+    ]
+  },
+  {
+    "name": "Physiotherapie05",
+    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
+    "imageUrls": [
+      "src/assets/schachKugelBackground01.png",
+      "src/assets/schachKugelBackground01.png"
+    ]
+  }
+]

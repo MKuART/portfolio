@@ -5,20 +5,16 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const URI = "http://localhost:2222";
 const projectEndpoint = "/project";
-const relativePath = "../assets/mku/itteration.png";
-const absolutePath = "C:/Users/Michél/Desktop/portfolio/portfolio/frontend/src/" + relativePath.substring(2);
-
-// Jetzt können Sie den absoluten Pfad verwenden
-console.log(absolutePath);
 
 function Gallery() {
   const [startIndex, setStartIndex] = useState(0);
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [projects, setProjects] = useState([]);
+  const [shouldUpdate, setShouldUpdate] = useState(false);
 
   useEffect(() => {
     fetchProjects();
-  }, []);
+  }, [shouldUpdate]);
 
   const fetchProjects = async () => {
     try {
@@ -42,13 +38,13 @@ function Gallery() {
 
   const handleClickPrev = () => {
     if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
+      setStartIndex(startIndex - 2);
     }
   };
 
   const handleClickNext = () => {
     if (startIndex + 6 < projects.length) {
-      setStartIndex(startIndex + 1);
+      setStartIndex(startIndex + 2);
     }
   };
 
@@ -58,6 +54,11 @@ function Gallery() {
     setSelectedCardIndex(index);
   };
 
+  const handleClose = () => {
+    setSelectedCardIndex(null);
+    setShouldUpdate(!shouldUpdate);
+  };
+
   return (
     <div className='gallery-bg'>
       <div className='gallery-container' >
@@ -65,23 +66,75 @@ function Gallery() {
           <div className='left-arrow' onClick={handleClickPrev}>
             <FontAwesomeIcon className='arrows-icon' icon={faAngleLeft}/>
           </div>
-          <div className='pics-container'>
-            {displayProjects.map((project, index) => (
-              <div className={`pic-card ${selectedCardIndex === index ? 'expanded' : ''}`} 
-                key={index}
-                onClick={() => setSelectedCardIndex(index)}
-                >
-                <div className='pic-container'>
-                  {project.imageUrls[0] && (
-                    <img src={`file://${"C:/Users/Michél/Desktop/portfolio/portfolio/frontend/src/" + project.imageUrls[0].substring(2)}`} alt={`First Image`} />
-                  )}
+          {selectedCardIndex !== null ? ( 
+            <div className={`single-pics-container`}>
+              <div className={`single-pic-card`} onClick={() => handleClick(selectedCardIndex)}>
+                <div className='single-pic-container'>
+                  <h3>{displayProjects[selectedCardIndex].name}</h3>
+                  {displayProjects[selectedCardIndex].imageUrls[0] && (
+                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                    )}
                 </div>
-                <h3>{project.name}</h3>
-                <p className='pic-description'>{project.description}</p>
-                <div className='pic-description'></div>
+                <p className='single-pic-description'>{displayProjects[selectedCardIndex].description}</p>
+                <button onClick={handleClose}>Close</button>
               </div>
-            ))}
-          </div>
+
+              <div className='gab'></div>
+
+              <div className='history'>
+
+                <section>
+                  <div className='content-container'>
+
+                  <h4>first section</h4>
+                  <p className='.history-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid maiores nostrum repudiandae corporis excepturi quaerat minima reiciendis sapiente at optio, quas itaque, vitae quam odio maxime tenetur exercitationem? Fugiat, earum?</p>
+                  {displayProjects[selectedCardIndex].imageUrls[1] && (
+                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                    )}
+                  </div>
+                </section>
+                <section>
+                  <div className='content-container'>
+
+                  <h4>second section</h4>
+                  <p className='.history-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid maiores nostrum repudiandae corporis excepturi quaerat minima reiciendis sapiente at optio, quas itaque, vitae quam odio maxime tenetur exercitationem? Fugiat, earum?</p>
+                  {displayProjects[selectedCardIndex].imageUrls[1] && (
+                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                    )}
+                  </div>
+                </section>
+                <section>
+                  <div className='content-container'>
+
+                  <h4>first section</h4>
+                  {displayProjects[selectedCardIndex].imageUrls[1] && (
+                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                    )}
+                    <p className='.history-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid maiores nostrum repudiandae corporis excepturi quaerat minima reiciendis sapiente at optio, quas itaque, vitae quam odio maxime tenetur exercitationem? Fugiat, earum?</p>
+                  </div>
+                </section>
+                
+              </div>
+            </div>
+          ) : ( 
+            <div className={`pics-container `}>
+              {displayProjects.map((project, index) => (
+                <div className={`pic-card `} 
+                  key={index}
+                  onClick={() => handleClick(index)}
+                >
+                  <div className='pic-container'>
+                    {project.imageUrls[0] && (
+                      <img className='pic-only' src={`http://localhost:5173/${project.imageUrls[0]}`} alt={`First Image`} />
+                    )}
+                  </div>
+                  <h3>{project.name}</h3>
+                  <p className='pic-description'>{project.description}</p>
+                  <div className='pic-description'></div>
+                </div>
+              ))}
+            </div>
+          )}
           <div className='right-arrow' onClick={handleClickNext}>
             <FontAwesomeIcon className='arrows-icon' icon={faAngleRight}/>
           </div>
@@ -93,7 +146,10 @@ function Gallery() {
 
 export default Gallery;
 
+
 /**
+ * ${selectedCardIndex === index ? 'expanded' : ''}
+ * 
  * <div className='pics-container'>
             <div className='pic-card project-one'>
               <div className='pic-container'></div>

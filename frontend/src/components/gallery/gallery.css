@@ -1,5 +1,5 @@
 .gallery-bg {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background: url(../../assets/schachKugelBackground03.png);
     background-size: cover;
@@ -33,8 +33,8 @@
 /*     background-color: aqua; */
     margin-top: 250px;
     margin-left: 300px;
-    height: 33rem;
-    width: 76rem;
+    height: 68vh;
+    width: 80%;
     z-index: 1;
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
     backdrop-filter: blur(10px);
@@ -78,9 +78,61 @@
     display: flex;
     flex-wrap: wrap;
 }
+.single-pics-container {
+    width: 65.5rem;
+
+    display: flex;
+    justify-content: space-between;
+}
 .pic-card {
     height: 15.5rem;
     width: 21.64rem;
+}
+.history {
+
+}
+.single-pic-card {
+
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.single-pic-only {
+    float: left;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.history {
+    background-color: var(--black-bg);
+    height: 99%;
+    width: 56%;
+    margin-right: 0px;
+    overflow: auto;
+}
+.content-container {
+    margin: auto;
+    height: 99%;
+    width: 96%;
+
+}
+
+.history-text {
+    
+    padding-left: 2px;
+}
+.gab {
+    height: 90%;
+    width: 10px;
+    margin-left: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    box-shadow: var(--hover-round-shadow);
+    border-radius: 20px;
 }
 .pic-card.expanded {
     background: linear-gradient(135deg, rgba(155, 219, 221, 0.8), rgba(255, 255, 255, 0));
@@ -91,12 +143,19 @@
     transform: translate(-100%, -80%) scale(2);
     z-index: 2;
 }
-
+.pics-container.none {
+    display: none;
+}
 .pic-card:hover {
     background: linear-gradient(135deg, rgba(155, 219, 221, 0.3), rgba(255, 255, 255, 0));
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 .pic-container {
+    margin: auto;
+    height: 10rem;
+    width: 20rem;
+}
+.pic-only {
     margin: auto;
     height: 10rem;
     width: 20rem;
@@ -108,6 +167,10 @@ h3 {
     font-size: 0.7rem;
     margin-left: 25px;
     
+}
+.single-pic-description {
+    margin-left: 10px;
+    text-align: start;
 }
 .arrows-icon {
     font-size: 4rem;
