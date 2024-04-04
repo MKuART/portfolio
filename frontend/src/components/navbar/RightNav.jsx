@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './rightNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faGoogle, faInstagram, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
