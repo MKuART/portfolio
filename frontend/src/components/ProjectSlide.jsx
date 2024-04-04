@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './ProjectSlide.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faC, faE, faJ, faO, faP, faR, faS, faT } from '@fortawesome/free-solid-svg-icons'; 
 import { Link } from 'react-router-dom';
 
-function ProjectSlide() {
-    const [clicked, setClicked] = useState(false);
+function ProjectSlide({ onNavigation }) {
+    const [isSlideClicked, setIsSlideClicked] = useState(false);
 
-    const handleClick = () => {
-        setClicked(clicked); // Um den Klick jedes Mal umzuschalten
-    };
+    const handleClick = (page) => {
+        onNavigation(page);
+      };
+    const handleIconClick = () => {
+        setIsSlideClicked(!isSlideClicked);
+        
+      };
 
     return (
-        <div
+        <div 
             className={`project-glass `}
+            >
+            <div className={`font-list-container ${isSlideClicked ? 'move-left' : ''}`} >
+                <div className={`font-container`}
+                    onClick={handleIconClick}>
             
-        >   
-            <div className='font-list-container'>
-                <div 
-                    className={`'font-container${clicked ? 'clicked' : ''}`}
-                    onClick={handleClick}    
-                >
-                    <div className='project '>
+                    <div className='project'>
+                    
                         <FontAwesomeIcon className='alpha alpha-p' icon={faP} />
                     </div>
                     <div className='project'>
@@ -48,7 +51,10 @@ function ProjectSlide() {
                 </div>
                 <div className='list-container'>
                     <ul>
-                        <Link to='/gallery' />Gallery
+                        <Link 
+                            onClick={() => handleClick('gallery')}
+                            className='navlink-text' to='/gallery'>to Gallery</Link>
+
                         <li>
                             <a href=""></a>
                         </li>

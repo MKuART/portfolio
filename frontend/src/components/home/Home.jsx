@@ -18,10 +18,10 @@ export const Home = () => {
 
   return (
     <>
-      <LeftNav/>
+      <LeftNav onNavigation={handleNavigation}/>
       <RightNav onNavigation={handleNavigation} />
       {currentPage === 'parallax' && <Parallax />} 
-      <ProjectSlide/>
+      <ProjectSlide onNavigation={handleNavigation}/>
       <Login/>
       <Outlet />
     </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket, faAngleLeft } from '@fortawesome/free-solid-svg-icons'; 
 
@@ -16,11 +16,7 @@ function Login() {
 
   const handleIconClick = () => {
     setIsIconClicked(!isIconClicked);
-    setCurrentIcon(currentIcon === faArrowRightToBracket ? faAngleLeft : faArrowRightToBracket); 
-    if (!isIconClicked) {
-      const drop5 = document.querySelector('.drop-5');
-      drop5.style.left = '100px';
-    }
+    setCurrentIcon(currentIcon === faArrowRightToBracket ? faAngleLeft : faArrowRightToBracket);
   };
 
   return (
@@ -28,7 +24,7 @@ function Login() {
       <div className='login-glass'>
         <div className={`container ${isIconClicked ? 'move-right' : ''}`}>
           <form action="">
-            <p>Login</p>
+            <p className='login-test'>Login</p>
             <input
               type="email"
               name="email"
