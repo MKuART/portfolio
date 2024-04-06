@@ -1,0 +1,27 @@
+.about-container {
+    color: red;
+    border: '1px solid red';
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+/* .hobby-container, .tchno-container, .meta-container, .history-container {
+    color: red;
+    border: 1px solid red;
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    left: 240px;
+}
+.tchno-container {
+    left: 800px;
+}
+.meta-container {
+    top: 400px;
+    left: 800px;
+}
+.history-container {
+    top: 400px;
+
+}
+ */

@@ -12,6 +12,7 @@ function Gallery() {
   const [projects, setProjects] = useState([]);
   const [shouldUpdate, setShouldUpdate] = useState(false);
 
+
   useEffect(() => {
     fetchProjects();
   }, [shouldUpdate]);
@@ -89,7 +90,7 @@ function Gallery() {
                   <h4>first section</h4>
                   <p className='.history-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid maiores nostrum repudiandae corporis excepturi quaerat minima reiciendis sapiente at optio, quas itaque, vitae quam odio maxime tenetur exercitationem? Fugiat, earum?</p>
                   {displayProjects[selectedCardIndex].imageUrls[1] && (
-                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[1]}`} alt={`First Image`} />
                     )}
                   </div>
                 </section>
@@ -98,8 +99,8 @@ function Gallery() {
 
                   <h4>second section</h4>
                   <p className='.history-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid maiores nostrum repudiandae corporis excepturi quaerat minima reiciendis sapiente at optio, quas itaque, vitae quam odio maxime tenetur exercitationem? Fugiat, earum?</p>
-                  {displayProjects[selectedCardIndex].imageUrls[1] && (
-                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                  {displayProjects[selectedCardIndex].imageUrls[2] && (
+                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[2]}`} alt={`First Image`} />
                     )}
                   </div>
                 </section>
@@ -107,8 +108,8 @@ function Gallery() {
                   <div className='content-container'>
 
                   <h4>first section</h4>
-                  {displayProjects[selectedCardIndex].imageUrls[1] && (
-                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                  {displayProjects[selectedCardIndex].imageUrls[3] && (
+                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[3]}`} alt={`First Image`} />
                     )}
                     <p className='.history-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid maiores nostrum repudiandae corporis excepturi quaerat minima reiciendis sapiente at optio, quas itaque, vitae quam odio maxime tenetur exercitationem? Fugiat, earum?</p>
                   </div>
