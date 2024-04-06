@@ -16,4 +16,8 @@ export default CategoryModel;
 {
     "label":"3D Animation"
 }
+PATCH:
+{
+  "categoryId": "66114f4a8d41a9c346c1d65f" 
+}
  */
