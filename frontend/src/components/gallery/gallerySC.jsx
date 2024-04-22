@@ -1,151 +1,106 @@
-import { useEffect, useState } from 'react'
-import './gallery.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useState } from "react";
+import Legend from "./legend/Legend.jsx";
 
 
-function Gallery() {
-  const [startIndex, setStartIndex] = useState(0);
-  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+const URICustomer = "http://localhost:1412/category";
 
-  const handleClick = (index) => {
-    setSelectedCardIndex(index);
-  };
-  
+function Dashboard() {
+  const [customerData, setCustomerData] = useState(null); 
+  const [categories, setCategories] = useState([]); 
 
-/**
- * example data:
- * [
-  {
-    "_id": "660c6284d948b5abea9fbf83",
-    "name": "MK-Ultra",
-    "imageUrls": [
-      "./assets/mku/itteration.png",
-      "./assets/mku/itteration018.png"
-    ],
-    "__v": 0
+  async function fetchCustomer() {
+    try {
+      const response = await fetch(URICustomer, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include"
+      });
+      if (!response.ok) {
+        console.error("Error fetching customer data:", response.statusText);
+      } else {
+        const data = await response.json();
+        setCustomerData(data); 
+        setCategories(data.categories);
+      }
+    } catch (error) {
+      console.log(`Error: ${error}`);
+    }
   }
-]
- */
-  const projects = [
-    { title: 'Title 1', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 2', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 3', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 4', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 5', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 6', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 7', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 8', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 9', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 10', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 11', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 12', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 13', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
-    { title: 'Title 14', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut accusantium unde facilis?' },
 
-  ];
-  const displayProjects = projects.slice(startIndex, startIndex + 6);
-
-  const handleClickPrev = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
-    }
-  };
-
-  const handleClickNext = () => {
-    if (startIndex + 6 < projects.length) {
-      setStartIndex(startIndex + 1);
-    }
-  };
+  useEffect(() => {
+    fetchCustomer();
+  }, []);
 
   return (
-    <div className='gallery-bg'>
-      <div className='gallery-container' >
-        <div className='carussel-container'>
-          <div className='left-arrow' onClick={handleClickPrev}>
-            <FontAwesomeIcon className='arrows-icon' icon={faAngleLeft}/>
-          </div>
-          <div className='pics-container'>
-            {displayProjects.map((project, index) => (
-              <div className={`pic-card ${selectedCardIndex === index ? 'expanded' : ''}`} 
-                key={index}
-                onClick={() => setSelectedCardIndex(index)}
-                >
-                <div className='pic-container'></div>
-                <h3>{project.title}</h3>
-                <p className='pic-description'>{project.description}</p>
-                <div className='pic-description'></div>
-              </div>
-            ))}
-          </div>
-          
+    <div>
+      Dashboard
+      <Legend />
+      <div style={{ border: '1px solid red', height: '400px', width: '100vw'}}>
+        {categories.map((category, index) => (
+          <div 
+            key={index}
+            style={{ border: '1px solid red', height: '200px', width: '200px'}}
+            >
 
-          <div className='right-arrow' onClick={handleClickNext}>
-          <FontAwesomeIcon className='arrows-icon' icon={faAngleRight}/>
+            <p>{category.name}</p>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;
+
+import { useEffect, useState } from "react";
+
+const URIAccount = "http://localhost:1412/account";
+
+function Legend() {
+  const [account, setAccount] = useState(null); 
+
+  async function fetchCustomer() {
+    try {
+      const response = await fetch(URIAccount, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include"
+      });
+      if (!response.ok) {
+        console.error("Error fetching customer data:", response.statusText);
+      } else {
+        const data = await response.json();
+        setAccount(data); 
+        
+      }
+    } catch (error) {
+      console.log(`Error: ${error}`);
+    }
+  }
+
+  useEffect(() => {
+    fetchCustomer();
+  }, []);
+
+  return (
+    <div>Legend
+      <div style={{ border: '1px solid red', height: '400px', width: '100vw'}}>
+        {account.map((customer, index) => (
+          <div 
+            key={index}
+            style={{ border: '1px solid red', height: '200px', width: '200px'}}
+            >
+
+            <p>{customer.firstname}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
-export default Gallery
-
-[
-  {
-    "name": "MK-Ultra",
-    "description": "blender Animation",
-    "imageUrls": [
-      "src/assets/mku/itteration.png",
-      "src/assets/mku/itteration018.png"
-    ]
-  },
-  {
-    "name": "Retro Street Loop",
-    "description": "blender Animation for Music",
-    "imageUrls": [
-      "src/assets/mku/itteration.png",
-      "src/assets/mku/itteration018.png"
-    ]
-  },
-  {
-    "name": "Physiotherapie",
-    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
-    "imageUrls": [
-      "src/assets/schachKugelBackground01.png",
-      "src/assets/schachKugelBackground01.png"
-    ]
-  },
-  {
-    "name": "Physiotherapie02",
-    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
-    "imageUrls": [
-      "src/assets/schachKugelBackground01.png",
-      "src/assets/schachKugelBackground01.png"
-    ]
-  },
-  {
-    "name": "Physiotherapie03",
-    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
-    "imageUrls": [
-      "src/assets/schachKugelBackground01.png",
-      "src/assets/schachKugelBackground01.png"
-    ]
-  },
-  {
-    "name": "Physiotherapie04",
-    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
-    "imageUrls": [
-      "src/assets/schachKugelBackground01.png",
-      "src/assets/schachKugelBackground01.png"
-    ]
-  },
-  {
-    "name": "Physiotherapie05",
-    "description": "Design, Lorem ipsum quatschi la far taschi dalama",
-    "imageUrls": [
-      "src/assets/schachKugelBackground01.png",
-      "src/assets/schachKugelBackground01.png"
-    ]
-  }
-]
+export default Legend

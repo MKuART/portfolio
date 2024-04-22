@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import RightNav from './navbar/RightNav.jsx';
 import LeftNav from './navbar/LeftNav.jsx';
