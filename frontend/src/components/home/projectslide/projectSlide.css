@@ -118,3 +118,20 @@
         transform: translateX(-550px);
     }
 }
+@media screen and (max-width: 1600px) {
+
+}
+@media screen and (max-width: 1000px) {
+
+}
+@media screen and (max-width: 768px) {
+    .project-glass {
+        top: 240px;
+    }
+}
+@media screen and (max-width: 530px) {
+
+}
+@media screen and (max-width: 390px) {
+
+}

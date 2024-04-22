@@ -5,23 +5,77 @@
     width: 100%;
     margin: 0;
 }
-/* .hobby-container, .tchno-container, .meta-container, .history-container {
+.hobby-container, 
+.tchno-container, 
+.meta-container, 
+.history-container, 
+.other-container,
+.social-container  {
     color: red;
-    border: 1px solid red;
     height: 300px;
     width: 500px;
     position: absolute;
     left: 240px;
+    --cyan-text:  rgb(155, 219, 221, 1);
+    --cyan-border:  rgb(155, 219, 221, 0.18);
+    --black-bg: rgba(0,0,0,1);
+    --round-shadow:   rgba(0, 0, 0, 0.17) 
+    0px -23px 25px 0px inset,
+    rgba(155, 219, 221, 0.15) 0px -36px 30px 0px inset,
+    rgba(155, 219, 221, 0.1) 0px -79px 40px 0px inset, 
+    rgba(155, 219, 221, 0.06) 0px 2px 1px, 
+    rgba(155, 219, 221, 0.09) 0px 4px 2px, 
+    rgba(155, 219, 221, 0.09) 0px 8px 4px, 
+    rgba(155, 219, 221, 0.09) 0px 16px 8px, 
+    rgba(155, 219, 221, 0.09) 0px 32px 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    /* border: 1px solid rgba(255,255,255,0.18); */
+    box-shadow: var(--round-shadow);
+    cursor: pointer;
 }
 .tchno-container {
-    left: 800px;
+    border-radius: 20px 20px 20px 1000px;
+    border-bottom: 5px solid var(--cyan-text);
+    left: 1000px;
+    top: 680px;
+    width: 300.59px; 
 }
 .meta-container {
-    top: 400px;
-    left: 800px;
+    border-radius: 20px 2000px 20px 20px;
+    border-top: 5px solid var(--cyan-text);
+    border-right: 5px solid var(--cyan-text);
+    top: 40px;
+    left: 1080px;
+    width: 617.42px;
+    height: 617.42px;
 }
 .history-container {
-    top: 400px;
+    top: 80px;
+    left: 300px;
+}
+.hobby-container {
+    border-top: 5px solid var(--cyan-text);
+    top: 40px;
+    left: 60px;
+    width: 999px;
+    height: 900px;
+    border-radius: 5000px 20px 20px 20px;
 
 }
- */
+.other-container {
+    border-radius: 20px 20px 4000px 20px;
+    border-bottom: 5px solid var(--cyan-text);
+    border-right: 5px solid var(--cyan-text);
+    left: 1316px;
+    top: 680px;
+    width: 381.59px;
+}
+.social-container {
+    top: 420px;
+    left: 140px;
+    height: 150px;
+    width: 540px;
+}
