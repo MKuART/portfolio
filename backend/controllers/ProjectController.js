@@ -15,7 +15,8 @@ export const createProject = async (req, res, next) => {
       const newProject = await ProjectModel.create({
         name: req.body.name,
         description: req.body.description,
-        imageUrls: req.body.imageUrls 
+        imageUrls: req.body.imageUrls,
+        categories: req.body.categories
       });
       res.status(200).json({ message: "Project created!", project: newProject });
     } catch (err) {

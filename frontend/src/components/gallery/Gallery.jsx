@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import './gallery.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import {Cloudinary} from "@cloudinary/url-gen";
+import {AdvancedImage} from '@cloudinary/react';
+import {fill} from "@cloudinary/url-gen/actions/resize";
 
 const URI = "http://localhost:2222";
 const projectEndpoint = "/project";
@@ -11,6 +14,16 @@ function Gallery() {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
   const [projects, setProjects] = useState([]);
   const [shouldUpdate, setShouldUpdate] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: 'didppzjta'
+    }
+  });
+
+  const book01 = cld.image('portfolio/qwjtzhtxdosu7or9xalr');
+  book01.resize(fill().width(500).height(300));
 
 
   useEffect(() => {
@@ -56,8 +69,8 @@ function Gallery() {
   };
 
   const handleClose = () => {
-    setSelectedCardIndex(null);
-    setShouldUpdate(!shouldUpdate);
+    selectedCardIndex(null);
+    setIsOpen(false);
   };
 
   return (
@@ -67,13 +80,13 @@ function Gallery() {
           <div className='left-arrow' onClick={handleClickPrev}>
             <FontAwesomeIcon className='arrows-icon' icon={faAngleLeft}/>
           </div>
-          {selectedCardIndex !== null ? ( 
+          {isOpen === true && selectedCardIndex !== null ? ( 
             <div className={`single-pics-container`}>
               <div className={`single-pic-card`} onClick={() => handleClick(selectedCardIndex)}>
                 <div className='single-pic-container'>
                   <h3>{displayProjects[selectedCardIndex].name}</h3>
                   {displayProjects[selectedCardIndex].imageUrls[0] && (
-                    <img className='single-pic-only' src={`http://localhost:5173/${displayProjects[selectedCardIndex].imageUrls[0]}`} alt={`First Image`} />
+                    <AdvancedImage className='single-pic-only' cldImg={cld.image(`${displayProjects[selectedCardIndex].imageUrls[0]}`).resize(fill().width(540).height(280))} alt={`First Image`} />
                     )}
                 </div>
                 <p className='single-pic-description'>{displayProjects[selectedCardIndex].description}</p>
@@ -126,7 +139,7 @@ function Gallery() {
                 >
                   <div className='pic-container'>
                     {project.imageUrls[0] && (
-                      <img className='pic-only' src={`http://localhost:5173/${project.imageUrls[0]}`} alt={`First Image`} />
+                      <AdvancedImage className='pic-only' cldImg={cld.image(`${project.imageUrls[0]}`).resize(fill().width(540).height(280))} alt={`First Image`} />
                     )}
                   </div>
                   <h3>{project.name}</h3>

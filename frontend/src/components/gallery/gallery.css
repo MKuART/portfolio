@@ -84,7 +84,7 @@
 }
 
 .pics-container {
-    width: 65.5rem;
+    max-width: 65.5rem;
     display: flex;
     flex-wrap: wrap;
 }
@@ -170,7 +170,7 @@
 .pic-only {
     margin: auto;
     height: 10rem;
-    width: 20rem;
+    max-width: 20rem;
 }
 h3 {
     margin-left: 25px;
