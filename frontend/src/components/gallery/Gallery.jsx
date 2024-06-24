@@ -28,6 +28,7 @@ function Gallery() {
 
   useEffect(() => {
     fetchProjects();
+
   }, [shouldUpdate]);
 
   const fetchProjects = async () => {
@@ -65,11 +66,14 @@ function Gallery() {
   const displayProjects = projects.slice(startIndex, startIndex + 6);
 
   const handleClick = (index) => {
-    setSelectedCardIndex(index);
+    if (selectedCardIndex !== index) {
+      setSelectedCardIndex(index);
+      setIsOpen(true);
+    }
   };
 
   const handleClose = () => {
-    selectedCardIndex(null);
+    setSelectedCardIndex(null);
     setIsOpen(false);
   };
 
@@ -90,7 +94,7 @@ function Gallery() {
                     )}
                 </div>
                 <p className='single-pic-description'>{displayProjects[selectedCardIndex].description}</p>
-                <button onClick={handleClose}>Close</button>
+                <button onClick={handleClose}>zurück zur Übersicht</button>
               </div>
 
               <div className='gab'></div>
